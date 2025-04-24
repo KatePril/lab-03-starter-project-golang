@@ -9,6 +9,7 @@ RUN go build -o build/fizzbuzz
 FROM scratch
 
 COPY --from=builder /app/build/fizzbuzz /fizzbuzz
+COPY --from=builder /app/templates/index.html /templates/index.html
 
 EXPOSE 8080
 
