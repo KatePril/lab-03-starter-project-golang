@@ -6,7 +6,7 @@ COPY . .
 
 RUN go build -o build/fizzbuzz
 
-FROM scratch
+FROM gcr.io/distroless/static-debian12
 
 COPY --from=builder /app/build/fizzbuzz /fizzbuzz
 COPY --from=builder /app/templates/index.html /templates/index.html
